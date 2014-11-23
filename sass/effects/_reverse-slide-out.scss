@@ -1,0 +1,19 @@
+/* Effect 5: Reverse slide out */
+.offcanvas-reverse-slide-out.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d($offcanvas-menu-width, 0, 0);
+	transform: translate3d($offcanvas-menu-width, 0, 0);
+}
+
+.offcanvas-reverse-slide-out .offcanvas-menu {
+	z-index: $zindex-offcanvas-menu;
+	-webkit-transform: translate3d(50%, 0, 0);
+	transform: translate3d(50%, 0, 0);
+}
+
+.offcanvas-reverse-slide-out.offcanvas-menu-open .offcanvas-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform $offcanvas-transition-duration;
+	transition: transform $offcanvas-transition-duration;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Sidebar Transitions</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/offcanvasSidebar.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<style type="text/css">
+		select{
+			background: transparent;
+			color: inherit;
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="offcanvas-container" class="offcanvas-container offcanvas-slide-in-top">
+			<!-- 	
+				example menus 
+				these menus will be on top of the push wrapper
+			-->
+		
+			<nav class="offcanvas-menu" id="menu-1">
+					<h2 class="icon icon-lab">Sidebar</h2>
+					<ul>
+						<li><a class="icon icon-data" href="#">Data Management</a></li>
+						<li><a class="icon icon-location" href="#">Location</a></li>
+						<li><a class="icon icon-study" href="#">Study</a></li>
+						<li><a class="icon icon-photo" href="#">Collections</a></li>
+						<li><a class="icon icon-wallet" href="#">Credits</a></li>
+					</ul>
+				</nav>
+				
+			<!-- content push wrapper -->
+			<div class="offcanvas-pusher">
+
+					
+				<!-- 	
+					example menus 
+					these menus will be under the push wrapper
+				-->
+			
+
+				<div class="offcanvas-content"><!-- this is the wrapper for the content -->
+					<div class="offcanvas-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						<div class="codrops-top clearfix">
+							<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/3DShadingWithBoxShadows/"><span>Previous Demo</span></a>
+							<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16292"><span>Back to the Codrops Article</span></a></span>
+						</div>
+						<header class="codrops-header">
+							<h1>Sidebar Transitions <span>Transition effects for off-canvas views</span></h1>
+						</header>
+						<div class="main clearfix">
+							<div id="offcanvas-trigger-effects" class="column">
+								<select>
+								<option value="offcanvas-slide-in-top">Slide in on top</option>
+								<option value="offcanvas-reveal">Reveal</option>
+								<option value="offcanvas-push">Push</option>
+								<option value="offcanvas-slide-along">Slide along</option>
+								<option value="offcanvas-reverse-slide-out">Reverse slide out</option>
+								<option value="offcanvas-rotate-pusher">Rotate pusher</option>
+								<option value="offcanvas-3D-rotate-in">3D rotate in</option>
+								<option value="offcanvas-3D-rotate-out">3D rotate out</option>
+								<option value="offcanvas-scale-down-pusher">Scale down pusher</option>
+								<option value="offcanvas-scale-up">Scale Up</option>
+								<option value="offcanvas-scale-rotate-pusher">Scale &amp; rotate pusher</option>
+								<option value="offcanvas-open-door">Open door</option>
+								<option value="offcanvas-fall-down">Fall down</option>
+								<option value="offcanvas-delayed-3D-rotate">Delayed 3D Rotate</option>
+								</select>
+								<button data-toggle="sidebar"></button>
+							</div>
+							<div class="column">
+								<p>Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
+								<p>Here is some inspiration for showing them in style using CSS transitions.</p>
+							</div>
+							<div class="info">
+								<p>If you enjoyed this demo you might also like:</p>
+								<p><a href="http://tympanus.net/Development/HeaderEffects/">On Scroll Header Effects</a></p>
+								<p><a href="http://tympanus.net/Development/PageTransitions/">A Collection of Page Transitions</a></p>
+							</div>
+						</div><!-- /main -->
+					</div><!-- /offcanvas-content-inner -->
+				</div><!-- /offcanvas-content -->
+			</div><!-- /offcanvas-pusher -->
+		</div><!-- /offcanvas-container -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/offcanvasSidebar.js"></script>
+		<script type="text/javascript">
+		function fixMenuPosition(){
+		var outPusherEffects = 'push rotate-pusher 3D-rotate-in 3D-rotate-out delayed-3D-rotate'.split(" ");
+		var inPusherEffects = 'slide-in-top reveal slide-along reverse-slide-along scale-down-pusher scale-up scale-rotate-pusher open-door fall-down'.split(" ");
+		
+		for (var i = outPusherEffects.length - 1; i >= 0; i--) {
+			var effect = 'offcanvas-'+outPusherEffects[i];
+			if($('.offcanvas-container').hasClass(effect) ){
+				$('.offcanvas-menu').prependTo('.offcanvas-pusher');
+				return;
+			}
+
+		};
+
+		for (var i = inPusherEffects.length - 1; i >= 0; i--) {
+			var effect = 'offcanvas-'+inPusherEffects[i];
+			if($('.offcanvas-container').hasClass(effect) ){
+				$('.offcanvas-menu').prependTo('.offcanvas-container');
+				return;
+				fixMenuPosition()
+			}
+
+		};
+	}
+
+			$('select').change(function(e){
+				$("#offcanvas-container").attr("class", 'offcanvas-container').addClass($('select').val());
+				fixMenuPosition();
+			});
+		</script>
+	</body>
+</html>

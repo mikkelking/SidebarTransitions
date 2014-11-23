@@ -1,0 +1,16 @@
+/* Effect 1: Slide in on top */
+.offcanvas-slide-in-top .offcanvas-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.offcanvas-slide-in-top.offcanvas-menu-open .offcanvas-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.offcanvas-slide-in-top .offcanvas-menu::after {
+	display: none;
+}

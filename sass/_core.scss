@@ -1,0 +1,94 @@
+*,
+*:after,
+*::before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+.offcanvas-container,
+.offcanvas-pusher,
+.offcanvas-content {
+  height: 100%;
+}
+
+.offcanvas-content {
+  overflow-y: scroll;
+  background: $offcanvas-content-bg;
+}
+
+.offcanvas-content,
+.offcanvas-content-inner {
+  position: relative;
+}
+
+.offcanvas-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.offcanvas-pusher {
+  position: relative;
+  left: 0;
+  z-index: $zindex-offcanvas-pusher;
+  height: 100%;
+  -webkit-transition: -webkit-transform $offcanvas-transition-duration;
+  transition: transform $offcanvas-transition-duration;
+}
+
+.offcanvas-pusher::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background: $offcanvas-pusher-bg;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity $offcanvas-transition-duration, width 0.1s $offcanvas-transition-duration, height 0.1s $offcanvas-transition-duration;
+  transition: opacity $offcanvas-transition-duration, width 0.1s $offcanvas-transition-duration, height 0.1s $offcanvas-transition-duration;
+}
+
+.offcanvas-menu-open .offcanvas-pusher::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity $offcanvas-transition-duration;
+  transition: opacity $offcanvas-transition-duration;
+}
+
+.offcanvas-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  visibility: hidden;
+  width: $offcanvas-menu-width;
+  height: 100%;
+  background: $offcanvas-menu-bg;
+  -webkit-transition: all $offcanvas-transition-duration;
+  transition: all $offcanvas-transition-duration;
+}
+
+.offcanvas-menu::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: $offcanvas-pusher-bg;
+  content: '';
+  opacity: 1;
+  -webkit-transition: opacity $offcanvas-transition-duration;
+  transition: opacity $offcanvas-transition-duration;
+}
+
+.offcanvas-menu-open .offcanvas-menu::after {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: opacity $offcanvas-transition-duration, width 0.1s $offcanvas-transition-duration, height 0.1s $offcanvas-transition-duration;
+  transition: opacity $offcanvas-transition-duration, width 0.1s $offcanvas-transition-duration, height 0.1s $offcanvas-transition-duration;
+}
+

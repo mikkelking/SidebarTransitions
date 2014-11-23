@@ -1,0 +1,5 @@
+/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+.no-csstransforms3d .offcanvas-pusher,
+.no-js .offcanvas-pusher {
+  padding-left: $offcanvas-menu-width;
+}

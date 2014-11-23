@@ -1,0 +1,13 @@
+$offcanvas-menu-width: 300px !default;
+$offcanvas-content-bg: #fff !default;
+$offcanvas-menu-bg: #222 !default;
+$offcanvas-menu-color: #fff !default;
+$offcanvas-menu-title-color: transparentize($offcanvas-menu-color, .2) !default;
+$offcanvas-menu-bg-hover: rgba(0,0,0,0.2) !default;
+$offcanvas-menu-color-hover: #fff !default;
+$offcanvas-pusher-bg: rgba(0,0,0,0.2) !default;
+$offcanvas-transition-duration: 500ms !default;
+
+$zindex-offcanvas-pusher: 99 !default;
+$zindex-offcanvas-menu: 1 !default;
+$offcanvas-prespective: 1500px !default;

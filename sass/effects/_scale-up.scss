@@ -1,0 +1,28 @@
+/* Effect 10: Scale up */
+
+.offcanvas-scale-up.offcanvas-container {
+	-webkit-perspective: $offcanvas-prespective;
+	perspective: $offcanvas-prespective;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+}
+
+.offcanvas-scale-up.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d($offcanvas-menu-width, 0, 0);
+	transform: translate3d($offcanvas-menu-width, 0, 0);
+}
+
+.offcanvas-scale-up .offcanvas-menu {
+	z-index: $zindex-offcanvas-menu;
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, -$offcanvas-menu-width);
+	transform: translate3d(0, 0, -$offcanvas-menu-width);
+}
+
+.offcanvas-scale-up.offcanvas-menu-open .offcanvas-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform $offcanvas-transition-duration;
+	transition: transform $offcanvas-transition-duration;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

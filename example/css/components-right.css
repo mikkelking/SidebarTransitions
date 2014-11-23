@@ -7,28 +7,28 @@
 
 html,
 body,
-.st-container,
-.st-pusher,
-.st-content {
+.offcanvas-container,
+.offcanvas-pusher,
+.offcanvas-content {
 	height: 100%;
 }
 
-.st-content {
+.offcanvas-content {
 	overflow-y: scroll;
 	background: #f3efe0;
 }
 
-.st-content,
-.st-content-inner {
+.offcanvas-content,
+.offcanvas-content-inner {
 	position: relative;
 }
 
-.st-container {
+.offcanvas-container {
 	position: relative;
 	overflow: hidden;
 }
 
-.st-pusher {
+.offcanvas-pusher {
 	position: relative;
 	left: 0;
 	z-index: 99;
@@ -37,7 +37,7 @@ body,
 	transition: transform 0.5s;
 }
 
-.st-pusher::after {
+.offcanvas-pusher::after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -50,7 +50,7 @@ body,
 	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 }
 
-.st-menu-open .st-pusher::after {
+.offcanvas-menu-open .offcanvas-pusher::after {
 	width: 100%;
 	height: 100%;
 	opacity: 1;
@@ -58,10 +58,10 @@ body,
 	transition: opacity 0.5s;
 }
 
-.st-menu {
+.offcanvas-menu {
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	z-index: 100;
 	visibility: hidden;
 	width: 300px;
@@ -71,7 +71,7 @@ body,
 	transition: all 0.5s;
 }
 
-.st-menu::after {
+.offcanvas-menu::after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -84,7 +84,7 @@ body,
 	transition: opacity 0.5s;
 }
 
-.st-menu-open .st-menu::after {
+.offcanvas-menu-open .offcanvas-menu::after {
 	width: 0;
 	height: 0;
 	opacity: 0;
@@ -94,13 +94,13 @@ body,
 
 /* content style */
 
-.st-menu ul {
+.offcanvas-menu ul {
 	margin: 0;
 	padding: 0;
-	list-style: none;
+	lioffcanvas-style: none;
 }
 
-.st-menu h2 {
+.offcanvas-menu h2 {
 	margin: 0;
 	padding: 1em;
 	color: rgba(0,0,0,0.4);
@@ -109,7 +109,7 @@ body,
 	font-size: 2em;
 }
 
-.st-menu ul li a {
+.offcanvas-menu ul li a {
 	display: block;
 	padding: 1em 1em 1em 1.2em;
 	outline: none;
@@ -123,11 +123,11 @@ body,
 	transition: background 0.3s, box-shadow 0.3s;
 }
 
-.st-menu ul li:first-child a {
+.offcanvas-menu ul li:firoffcanvas-child a {
 	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
 }
 
-.st-menu ul li a:hover {
+.offcanvas-menu ul li a:hover {
 	background: rgba(0,0,0,0.2);
 	box-shadow: inset 0 -1px rgba(0,0,0,0);
 	color: #fff;
@@ -136,100 +136,100 @@ body,
 /* Individual effects */
 
 /* Effect 1: Slide in on top */
-.st-effect-1.st-menu {
+.offcanvas-effect-1.offcanvas-menu {
 	visibility: visible;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 }
 
-.st-effect-1.st-menu-open .st-effect-1.st-menu {
+.offcanvas-effect-1.offcanvas-menu-open .offcanvas-effect-1.offcanvas-menu {
 	visibility: visible;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-1.st-menu::after {
+.offcanvas-effect-1.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 2: Reveal */
-.st-effect-2.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-2.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-2.st-menu {
+.offcanvas-effect-2.offcanvas-menu {
 	z-index: 1;
 }
 
-.st-effect-2.st-menu-open .st-effect-2.st-menu {
+.offcanvas-effect-2.offcanvas-menu-open .offcanvas-effect-2.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-.st-effect-2.st-menu::after {
+.offcanvas-effect-2.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 3: Push*/
-.st-effect-3.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-3.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-3.st-menu {
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+.offcanvas-effect-3.offcanvas-menu {
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 }
 
-.st-effect-3.st-menu-open .st-effect-3.st-menu {
+.offcanvas-effect-3.offcanvas-menu-open .offcanvas-effect-3.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-.st-effect-3.st-menu::after {
+.offcanvas-effect-3.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 4: Slide along */
-.st-effect-4.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-4.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-4.st-menu {
-	z-index: 1;
-	-webkit-transform: translate3d(-50%, 0, 0);
-	transform: translate3d(-50%, 0, 0);
-}
-
-.st-effect-4.st-menu-open .st-effect-4.st-menu {
-	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-.st-effect-4.st-menu::after {
-	display: none;
-}
-
-/* Effect 5: Reverse slide out */
-.st-effect-5.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
-}
-
-.st-effect-5.st-menu {
+.offcanvas-effect-4.offcanvas-menu {
 	z-index: 1;
 	-webkit-transform: translate3d(50%, 0, 0);
 	transform: translate3d(50%, 0, 0);
 }
 
-.st-effect-5.st-menu-open .st-effect-5.st-menu {
+.offcanvas-effect-4.offcanvas-menu-open .offcanvas-effect-4.offcanvas-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.offcanvas-effect-4.offcanvas-menu::after {
+	display: none;
+}
+
+/* Effect 5: Reverse slide out */
+.offcanvas-effect-5.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
+}
+
+.offcanvas-effect-5.offcanvas-menu {
+	z-index: 1;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(50%, 0, 0);
+}
+
+.offcanvas-effect-5.offcanvas-menu-open .offcanvas-effect-5.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -239,145 +239,145 @@ body,
 
 /* Effect 6: Rotate pusher */
 
-.st-effect-6.st-container {
+.offcanvas-effect-6.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-6 .st-pusher {
+.offcanvas-effect-6 .offcanvas-pusher {
 	-webkit-transform-origin: 0% 50%;
 	transform-origin: 0% 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-6.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0) rotateY(-15deg);
-	transform: translate3d(300px, 0, 0) rotateY(-15deg);
-	pointer-events: none;
+.offcanvas-effect-6.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-250px, 0, 380px) rotateY(15deg);
+	transform: translate3d(-250px, 0, 380px) rotateY(15deg);
 }
 
-.st-effect-6.st-menu {
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
+.offcanvas-effect-6.offcanvas-menu {
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+	-webkit-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-6.st-menu-open .st-effect-6.st-menu {
+.offcanvas-effect-6.offcanvas-menu-open .offcanvas-effect-6.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(15deg);
-	transform: translate3d(-100%, 0, 0) rotateY(15deg);
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(-15deg);
+	transform: translate3d(100%, 0, 0) rotateY(-15deg);
 }
 
-.st-effect-6.st-menu::after {
+.offcanvas-effect-6.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 7: 3D rotate in */
 
-.st-effect-7.st-container {
+.offcanvas-effect-7.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
+	overflow: hidden;
 }
 
-.st-effect-7 .st-pusher {
+.offcanvas-effect-7 .offcanvas-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-7.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-7.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-7.st-menu {
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg);
-	transform: translate3d(-100%, 0, 0) rotateY(-90deg);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
+.offcanvas-effect-7.offcanvas-menu {
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg);
+	transform: translate3d(100%, 0, 0) rotateY(90deg);
+	-webkit-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-7.st-menu-open .st-effect-7.st-menu {
+.offcanvas-effect-7.offcanvas-menu-open .offcanvas-effect-7.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
-	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(0deg);
+	transform: translate3d(100%, 0, 0) rotateY(0deg);
 }
 
 /* Effect 8: 3D rotate out */
 
-.st-effect-8.st-container {
+.offcanvas-effect-8.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-8 .st-pusher {
+.offcanvas-effect-8 .offcanvas-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-8.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-8.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-8.st-menu {
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
+.offcanvas-effect-8.offcanvas-menu {
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(-120deg);
+	transform: translate3d(100%, 0, 0) rotateY(-120deg);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-8.st-menu-open .st-effect-8.st-menu {
+.offcanvas-effect-8.offcanvas-menu-open .offcanvas-effect-8.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
-	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(0deg);
+	transform: translate3d(100%, 0, 0) rotateY(0deg);
 }
 
-.st-effect-8.st-menu::after {
+.offcanvas-effect-8.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 9: Scale down pusher */
 
-.st-effect-9.st-container {
+.offcanvas-effect-9.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-9 .st-pusher {
+.offcanvas-effect-9 .offcanvas-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-9.st-menu-open .st-pusher {
+.offcanvas-effect-9.offcanvas-menu-open .offcanvas-pusher {
 	-webkit-transform: translate3d(0, 0, -300px);
 	transform: translate3d(0, 0, -300px);
 }
 
-.st-effect-9.st-menu {
+.offcanvas-effect-9.offcanvas-menu {
 	opacity: 1;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 }
 
-.st-effect-9.st-menu-open .st-effect-9.st-menu {
+.offcanvas-effect-9.offcanvas-menu-open .offcanvas-effect-9.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -385,32 +385,32 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-9.st-menu::after {
+.offcanvas-effect-9.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 10: Scale up */
 
-.st-effect-10.st-container {
+.offcanvas-effect-10.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-10.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-10.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-10.st-menu {
+.offcanvas-effect-10.offcanvas-menu {
 	z-index: 1;
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, -300px);
 	transform: translate3d(0, 0, -300px);
 }
 
-.st-effect-10.st-menu-open .st-effect-10.st-menu {
+.offcanvas-effect-10.offcanvas-menu-open .offcanvas-effect-10.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -420,28 +420,28 @@ body,
 
 /* Effect 11: Scale and rotate pusher */
 
-.st-effect-11.st-container {
+.offcanvas-effect-11.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-11 .st-pusher {
+.offcanvas-effect-11 .offcanvas-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-11.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(100px, 0, -600px) rotateY(-20deg);
-	transform: translate3d(100px, 0, -600px) rotateY(-20deg);
+.offcanvas-effect-11.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(10px, 0, -300px) rotateY(20deg);
+	transform: translate3d(10px, 0, -300px) rotateY(20deg);
 }
 
-.st-effect-11.st-menu {
+.offcanvas-effect-11.offcanvas-menu {
 	opacity: 1;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 }
 
-.st-effect-11.st-menu-open .st-effect-11.st-menu {
+.offcanvas-effect-11.offcanvas-menu-open .offcanvas-effect-11.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -449,36 +449,36 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-11.st-menu::after {
+.offcanvas-effect-11.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 12: Open door */
 
-.st-effect-12.st-container {
+.offcanvas-effect-12.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-12 .st-pusher {
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
+.offcanvas-effect-12 .offcanvas-pusher {
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-12.st-menu-open .st-pusher {
-	-webkit-transform: rotateY(-10deg);
-	transform: rotateY(-10deg);
+.offcanvas-effect-12.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: rotateY(10deg);
+	transform: rotateY(10deg);
 }
 
-.st-effect-12.st-menu {
+.offcanvas-effect-12.offcanvas-menu {
 	opacity: 1;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 }
 
-.st-effect-12.st-menu-open .st-effect-12.st-menu {
+.offcanvas-effect-12.offcanvas-menu-open .offcanvas-effect-12.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -486,32 +486,32 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-12.st-menu::after {
+.offcanvas-effect-12.offcanvas-menu::after {
 	display: none;
 }
 
 /* Effect 13: Fall down */
 
-.st-effect-13.st-container {
+.offcanvas-effect-13.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-13.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-13.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-13.st-menu {
+.offcanvas-effect-13.offcanvas-menu {
 	z-index: 1;
 	opacity: 1;
 	-webkit-transform: translate3d(0, -100%, 0);
 	transform: translate3d(0, -100%, 0);
 }
 
-.st-effect-13.st-menu-open .st-effect-13.st-menu {
+.offcanvas-effect-13.offcanvas-menu-open .offcanvas-effect-13.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition-timing-function: ease-in-out;
 	transition-timing-function: ease-in-out;
@@ -525,33 +525,33 @@ body,
 
 /* Effect 14: Delayed 3D rotate */
 
-.st-effect-14.st-container {
+.offcanvas-effect-14.offcanvas-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-14 .st-pusher {
+.offcanvas-effect-14 .offcanvas-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-14.st-menu-open .st-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+.offcanvas-effect-14.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d(-300px, 0, 0);
+	transform: translate3d(-300px, 0, 0);
 }
 
-.st-effect-14.st-menu {
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	transform: translate3d(-100%, 0, 0) rotateY(90deg);
+.offcanvas-effect-14.offcanvas-menu {
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg);
+	transform: translate3d(100%, 0, 0) rotateY(90deg);
 	-webkit-transform-origin: 0% 50%;
 	transform-origin: 0% 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-14.st-menu-open .st-effect-14.st-menu {
+.offcanvas-effect-14.offcanvas-menu-open .offcanvas-effect-14.offcanvas-menu {
 	visibility: visible;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
@@ -559,12 +559,12 @@ body,
 	transition-timing-function: ease-in-out;
 	-webkit-transition-property: -webkit-transform;
 	transition-property: transform;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
-	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(0deg);
+	transform: translate3d(100%, 0, 0) rotateY(0deg);
 }
 
 /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
-.no-csstransforms3d .st-pusher,
-.no-js .st-pusher {
+.no-csstransforms3d .offcanvas-pusher,
+.no-js .offcanvas-pusher {
 	padding-left: 300px;
 }

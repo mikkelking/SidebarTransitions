@@ -1,0 +1,19 @@
+/* Effect 2: Reveal */
+.offcanvas-reveal.offcanvas-menu-open .offcanvas-pusher {
+	-webkit-transform: translate3d($offcanvas-menu-width, 0, 0);
+	transform: translate3d($offcanvas-menu-width, 0, 0);
+}
+
+.offcanvas-reveal .offcanvas-menu {
+	z-index: $zindex-offcanvas-menu;
+}
+
+.offcanvas-reveal.offcanvas-menu-open .offcanvas-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform $offcanvas-transition-duration;
+	transition: transform $offcanvas-transition-duration;
+}
+
+.offcanvas-menu::after {
+	display: none;
+}
