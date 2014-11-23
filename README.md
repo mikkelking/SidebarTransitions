@@ -2,7 +2,7 @@ jQuery Loading Effects
 =========
 
 A bootstrap compatible jQuery plugin for off-canvas navigations and sidebar transition effects.
-Inspiered to [Codrops article](http://tympanus.net/codrops/?p=16292)
+Inspiered to this [Codrops article](http://tympanus.net/codrops/?p=16292)
 
 
 Setup
@@ -94,17 +94,3 @@ Thanks
 ==========
 [Article on Codrops](http://tympanus.net/codrops/?p=18880)
 
-
-SCSS Sidebar Transitions
-=========
-
-USAGE
-======
-
-Some inspiration for transition effects for off-canvas navigations.
-
-[article on Codrops](http://tympanus.net/codrops/?p=16292)
-
-[demo](http://tympanus.net/Development/SidebarTransitions/)
-
-[LICENSING & TERMS OF USE](http://tympanus.net/codrops/licensing/)
