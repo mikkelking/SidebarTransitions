@@ -30,6 +30,7 @@
 		var container = document.getElementById( 'st-container' ),
 	            	reset = document.getElementById( 'closeMenu' ),
 			buttons = Array.prototype.slice.call( document.querySelectorAll( '#st-trigger-effects > button' ) ),
+			sidebarClosers = Array.prototype.slice.call( document.querySelectorAll( '.st-menu .close-sidebar' ) ),
 			// event type (if mobile use touch events)
 			eventtype = mobilecheck() ? 'touchstart' : 'click',
 			resetMenu = function() {
@@ -64,8 +65,10 @@
 			});
 		} );
 
-		window.resetSidebarMenu = resetMenu;
-
+		sidebarClosers.forEach(function(el, i) {
+			console.log(el);
+			el.addEventListener(eventtype, resetMenu);
+		});
 	}
 
 	init();
