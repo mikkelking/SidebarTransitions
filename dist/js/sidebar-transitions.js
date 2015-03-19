@@ -64,6 +64,8 @@
 			});
 		} );
 
+		window.resetSidebarMenu = resetMenu;
+
 	}
 
 	init();

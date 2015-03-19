@@ -1,9 +1,9 @@
 {
   "name": "sidebar-transitions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Some inspiration for transition effects for off-canvas navigations.",
   "main": "server.js",
-  "repository": "https://github.com/codrops/SidebarTransitions.git",
+  "repository": "https://github.com/shea256/SidebarTransitions.git",
   "dependencies": {},
   "devDependencies": {
     "express": "~4.7.2",

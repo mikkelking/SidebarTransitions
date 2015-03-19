@@ -1,9 +1,9 @@
 {
   "name": "sidebar-transitions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": [
     "dist/css/sidebar-transitions.min.css",
-    "dist/js/sidebar-transitions.min.js"
+    "dist/js/sidebar-transitions.js"
   ],
   "dependencies": {
     "classie": "~1.0.1",
