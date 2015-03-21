@@ -66,8 +66,9 @@
 		} );
 
 		sidebarClosers.forEach(function(el, i) {
-			console.log(el);
-			el.addEventListener(eventtype, resetMenu);
+			el.addEventListener(eventtype, function(ev) {
+				resetMenu();
+			});
 		});
 	}
 
