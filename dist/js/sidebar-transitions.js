@@ -10,12 +10,12 @@
  */
  var SidebarMenuEffects = (function() {
 
- 	function hasParentClass( e, classname ) {
-		if(e === document) return false;
-		if( classie.has( e, classname ) ) {
+ 	function hasParentClass(e, classname) {
+		if (e === document) return false;
+		if (classie.has(e, classname)) {
 			return true;
 		}
-		return e.parentNode && hasParentClass( e.parentNode, classname );
+		return e.parentNode && hasParentClass(e.parentNode, classname);
 	}
 
 	// http://coveroverflow.com/a/11381730/989439
@@ -27,46 +27,47 @@
 
 	function init() {
 
-		var container = document.getElementById( 'st-container' ),
-	            	reset = document.getElementById( 'closeMenu' ),
-			buttons = Array.prototype.slice.call( document.querySelectorAll( '#st-trigger-effects > button' ) ),
-			sidebarClosers = Array.prototype.slice.call( document.querySelectorAll( '.st-menu .close-sidebar' ) ),
+		var container = document.getElementById('st-container'),
+	            	reset = document.getElementById('closeMenu'),
+			buttons = Array.prototype.slice.call(document.querySelectorAll('#st-trigger-effects > button')),
+			sidebarClosers = Array.prototype.slice.call(document.querySelectorAll('.st-menu .close-sidebar')),
 			// event type (if mobile use touch events)
-			eventtype = mobilecheck() ? 'touchstart' : 'click',
+			actionStartedEvent = mobilecheck() ? 'touchstart' : 'click',
+			actionCompletedEvent = mobilecheck() ? 'touchend' : 'click',
 			resetMenu = function() {
-				classie.remove( container, 'st-menu-open' );
+				classie.remove(container, 'st-menu-open');
 			},
 			bodyClickFn = function(evt) {
-				if( !hasParentClass( evt.target, 'st-menu' ) ) {
+				if (!hasParentClass(evt.target, 'st-menu')) {
 					resetMenu();
-					document.removeEventListener( eventtype, bodyClickFn );
+					document.removeEventListener(actionStartedEvent, bodyClickFn);
 				}
 			},
 			resetClickFn = function(evt) {
 				if (evt.target == reset) {
 					resetMenu();
-					document.removeEventListener(eventtype, bodyClickFn);
+					document.removeEventListener(actionStartedEvent, bodyClickFn);
 				}
 			};
 
-		buttons.forEach( function( el, i ) {
-			var effect = el.getAttribute( 'data-effect' );
+		buttons.forEach(function(el, i) {
+			var effect = el.getAttribute('data-effect');
 
-			el.addEventListener( eventtype, function( ev ) {
+			el.addEventListener(actionStartedEvent, function(ev) {
 				ev.stopPropagation();
 				ev.preventDefault();
 				container.className = 'st-container'; // clear
-				classie.add( container, effect );
-				setTimeout( function() {
-					classie.add( container, 'st-menu-open' );
-				}, 25 );
-				document.addEventListener( eventtype, bodyClickFn );
-				document.addEventListener( eventtype, resetClickFn );
+				classie.add(container, effect);
+				setTimeout(function() {
+					classie.add(container, 'st-menu-open');
+				}, 25);
+				document.addEventListener(actionStartedEvent, bodyClickFn);
+				document.addEventListener(actionStartedEvent, resetClickFn);
 			});
 		} );
 
 		sidebarClosers.forEach(function(el, i) {
-			el.addEventListener(eventtype, function(ev) {
+			el.addEventListener(actionCompletedEvent, function(ev) {
 				resetMenu();
 			});
 		});
